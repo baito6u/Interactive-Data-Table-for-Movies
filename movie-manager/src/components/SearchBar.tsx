@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchQuery } from '../store/moviesSlice';
 import { RootState } from '../store/store';
-import './SearchBar.css'; // Optional: For styling
+import './SearchBar.css';
 
 const SearchBar: React.FC = () => {
   const dispatch = useDispatch();

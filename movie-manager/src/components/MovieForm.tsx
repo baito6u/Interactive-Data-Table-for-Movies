@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, editMovie, Movie } from '../store/moviesSlice';
 import { useNavigate, useParams } from 'react-router-dom';
 import { RootState } from '../store/store';
-import './MovieForm.css'; // Optional: For styling
+import './MovieForm.css';
 
 const MovieForm: React.FC = () => {
   const dispatch = useDispatch();
