@@ -28,6 +28,6 @@ describe('MovieTable Component', () => {
     );
 
     const searchInput = screen.getByPlaceholderText(/Search movies by title.../i);
-    expect(searchInput).toBeInTheDocument();  // This will also work
+    expect(searchInput).toBeInTheDocument();
   });
 });
