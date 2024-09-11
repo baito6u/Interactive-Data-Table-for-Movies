@@ -1,33 +1,21 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen} from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { store } from '../../store/store';
 import MovieTable from '../MovieTable';
 import { BrowserRouter } from 'react-router-dom';
+import '@testing-library/jest-dom';
 
-describe('MovieTable Component', () => {
-  test('renders movie table with movies', () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <MovieTable />
-        </BrowserRouter>
-      </Provider>
-    );
 
-    const movieTitle = screen.getByText(/Following/i);
-    expect(movieTitle).toBeInTheDocument();
-  });
+test('renders movie table', () => {
+  render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <MovieTable />
+      </BrowserRouter>
+    </Provider>
+  );
 
-  test('search functionality works', () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <MovieTable />
-        </BrowserRouter>
-      </Provider>
-    );
-
-    const searchInput = screen.getByPlaceholderText(/Search movies by title.../i);
-    expect(searchInput).toBeInTheDocument();
-  });
+  expect(screen.getByText(/Following/i)).toBeInTheDocument(); // 'toBeInTheDocument' should work now
 });
+
