@@ -11,6 +11,17 @@ const config: Config.InitialOptions = {
   moduleNameMapper: {
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
+  collectCoverage: true, // Enable coverage collection
+  coverageThreshold: {
+    global: {
+      statements: 60,
+      branches: 60,
+      functions: 60,
+      lines: 60,
+    },
+  },
+  coverageDirectory: 'coverage', // Save coverage reports in this folder
+  coverageReporters: ['text', 'lcov'], // Show coverage in the terminal and save an HTML report
 };
 
 export default config;
